@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iwan's RandomLinks</title>
+
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    :root {
+      --accent-color: 203 76% 52%;
+      --accent-rgb: 87, 153, 226;
+    }
+
+    .inter-font { font-family: 'Inter', sans-serif; }
+
+    .soft-neumorphism {
+      box-shadow:
+        3px 3px 6px #e0e0e0,
+        -3px -3px 6px #ffffff;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .soft-neumorphism:hover {
+      box-shadow:
+        6px 6px 12px rgba(0, 0, 0, 0.1),
+        -6px -6px 12px #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .glass-panel {
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .fade-in-scroll {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-in-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Global safe text sizing (avoid overflow) */
+    html { font-size: 15px; }
+    @media (min-width: 640px) { html { font-size: 16px; } }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 inter-font selection:bg-sky-200 selection:text-gray-900">
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 p-4 transition duration-300">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center h-12 glass-panel rounded-xl soft-neumorphism px-4">
+      <!-- Brand -->
+      <a href="#hero" class="text-sm sm:text-base font-semibold hover:text-sky-500 transition duration-150 whitespace-nowrap">
+        Iwan's RandomLinks
+      </a>
+
+      <!-- Nav Menu Items -->
+      <div class="hidden sm:flex space-x-5 md:space-x-8 text-sm md:text-base font-medium">
+        <a href="#links" class="hover:text-sky-500 transition duration-150 whitespace-nowrap">Configuration 1</a>
+        <a href="#projects" class="hover:text-sky-500 transition duration-150 whitespace-nowrap">Configuration 2</a>
+        <a href="#contact" class="hover:text-sky-500 transition duration-150 whitespace-nowrap">Configuration 3</a>
+      </div>
+
+      <!-- Mobile Menu (simple scroll links) -->
+      <a href="#links" class="sm:hidden text-sm font-semibold px-3 py-2 rounded-lg hover:bg-gray-100 transition duration-150">
+        Menu
+      </a>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 pt-28 pb-16">
+
+    <!-- 1. Hero Section -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20 fade-in-scroll" id="hero">
+
+      <!-- Hero Text -->
+      <div class="lg:col-span-2 p-8 md:p-14 glass-panel soft-neumorphism rounded-3xl min-h-[300px] flex flex-col justify-center">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-gray-900">
+          Tool for Gaming 🎮
+        </h1>
+        <p class="text-base md:text-xl font-light text-gray-600 max-w-3xl">
+          Masbro Bring It On
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs md:text-sm">
+          <span class="px-3 py-1 rounded-full bg-white/60 border border-white/80 soft-neumorphism">MLBB</span>
+          <span class="px-3 py-1 rounded-full bg-white/60 border border-white/80 soft-neumorphism">DNS</span>
+          <span class="px-3 py-1 rounded-full bg-white/60 border border-white/80 soft-neumorphism">VPN</span>
+          <span class="px-3 py-1 rounded-full bg-white/60 border border-white/80 soft-neumorphism">iOS Profiles</span>
+          <span class="px-3 py-1 rounded-full bg-white/60 border border-white/80 soft-neumorphism">Shortcuts</span>
+        </div>
+      </div>
+
+      <!-- Profile/Info -->
+      <div class="lg:col-span-1 p-8 soft-neumorphism rounded-3xl flex flex-col justify-center items-center text-center border border-gray-200 fade-in-scroll delay-100 bg-white">
+        <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-sky-400 bg-gray-200 mb-4 flex items-center justify-center text-gray-600 text-3xl font-bold">
+          🗿
+        </div>
+        <div class="text-lg md:text-xl font-semibold mb-2">
+          RandomLinkMasbro 🗿🎮
+        </div>
+        <div class="text-xs md:text-sm text-gray-500">
+          MLBB • DNS • VPN Lab (Personal Use)
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Personal Link Input Section & Share Panel -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20" id="share">
+
+      <!-- A. Link Input -->
+      <div class="lg:col-span-2 fade-in-scroll">
+        <h2 class="text-lg md:text-xl font-bold mb-4">
+          Personal Link Manager
+        </h2>
+
+        <div class="p-4 md:p-6 glass-panel soft-neumorphism rounded-3xl">
+          <label class="block text-xs md:text-sm font-medium mb-2 text-gray-600">
+            Paste URL Here (for quick save / copy)
+          </label>
+
+          <textarea
+            rows="1"
+            id="link-input"
+            class="w-full text-base md:text-xl p-3 border-none resize-none focus:ring-0 bg-transparent text-gray-900 outline-none placeholder-gray-400"
+            placeholder="https://example.com/my-tool"
+            style="min-height: 52px;"
+          ></textarea>
+
+          <button
+            id="save-btn"
+            class="mt-4 w-full py-3 rounded-xl bg-sky-500 text-white font-bold text-base md:text-lg hover:bg-sky-600 transition duration-150 shadow-md shadow-sky-300/50"
+          >
+            Save / Copy Link
+          </button>
+
+          <p class="mt-3 text-xs text-gray-500">
+            Tip: tampal apa-apa link (DNS, VPN, docs, tools, config) → klik butang untuk auto copy ke clipboard.
+          </p>
+        </div>
+      </div>
+
+      <!-- B. Share Options -->
+      <div class="lg:col-span-1 fade-in-scroll delay-200">
+        <h2 class="text-lg md:text-xl font-bold mb-4">
+          Share Options
+        </h2>
+
+        <div class="p-6 glass-panel rounded-3xl soft-neumorphism">
+          <div class="grid grid-cols-3 gap-4">
+
+            <button data-action="email" class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl text-sky-500 transition duration-150 group-hover:bg-sky-100 soft-neumorphism">✉️</div>
+              <span class="mt-2 text-[11px] text-gray-600 transition duration-150 group-hover:text-gray-900">Email</span>
+            </button>
+
+            <button data-action="social" class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl text-sky-500 transition duration-150 group-hover:bg-sky-100 soft-neumorphism">📱</div>
+              <span class="mt-2 text-[11px] text-gray-600 transition duration-150 group-hover:text-gray-900">Social</span>
+            </button>
+
+            <button data-action="copy" class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl text-sky-500 transition duration-150 group-hover:bg-sky-100 soft-neumorphism">🔗</div>
+              <span class="mt-2 text-[11px] text-gray-600 transition duration-150 group-hover:text-gray-900">Copy</span>
+            </button>
+
+            <button data-action="message" class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl text-sky-500 transition duration-150 group-hover:bg-sky-100 soft-neumorphism">💬</div>
+              <span class="mt-2 text-[11px] text-gray-600 transition duration-150 group-hover:text-gray-900">Message</span>
+            </button>
+
+            <button data-action="print" class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl text-sky-500 transition duration-150 group-hover:bg-sky-100 soft-neumorphism">🖨️</div>
+              <span class="mt-2 text-[11px] text-gray-600 transition duration-150 group-hover:text-gray-900">Print</span>
+            </button>
+
+            <button data-action="more" class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl text-sky-500 transition duration-150 group-hover:bg-sky-100 soft-neumorphism">…</div>
+              <span class="mt-2 text-[11px] text-gray-600 transition duration-150 group-hover:text-gray-900">More</span>
+            </button>
+
+          </div>
+
+          <p class="mt-4 text-xs text-gray-500">
+            Share panel ni untuk quick action atas link terakhir yang kau tampal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Modular Content Blocks -->
+    <section class="mb-20" id="links">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center fade-in-scroll">
+        Tools & Configurations (Quick Access)
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Link Slot 1 -->
+        <div class="p-6 soft-neumorphism glass-panel rounded-2xl fade-in-scroll">
+          <a href="https://example.com/mlbb-tools" class="block text-xl md:text-2xl font-semibold mb-2 hover:text-sky-500 transition duration-150">
+            MLBB Tools & Notes
+          </a>
+          <p class="text-gray-500 text-sm">
+            Tempat kumpul build, emblem, rotation, latihan hero, dan cheat sheet sendiri (bukan untuk orang lain… ini lab peribadi 🗿).
+          </p>
+        </div>
+
+        <!-- Link Slot 2 -->
+        <div class="p-6 soft-neumorphism glass-panel rounded-2xl fade-in-scroll delay-100">
+          <a href="https://example.com/dns-presets" class="block text-xl md:text-2xl font-semibold mb-2 hover:text-sky-500 transition duration-150">
+            DNS Presets (Gaming)
+          </a>
+          <p class="text-gray-500 text-sm">
+            Senarai preset DNS untuk test latency/stability. Simpan result ping, region, dan “rasa sedap” bila main.
+          </p>
+        </div>
+
+        <!-- Link Slot 3 -->
+        <div class="p-6 soft-neumorphism glass-panel rounded-2xl fade-in-scroll delay-200">
+          <a href="https://example.com/vpn-lab" class="block text-xl md:text-2xl font-semibold mb-2 hover:text-sky-500 transition duration-150">
+            VPN Lab & Split Tunneling
+          </a>
+          <p class="text-gray-500 text-sm">
+            Rujukan setup VPN, split tunneling, dan checklist kestabilan (guna dengan selamat & untuk testing sendiri).
+          </p>
+        </div>
+
+        <!-- Link Slot 4 -->
+        <div class="p-6 soft-neumorphism glass-panel rounded-2xl fade-in-scroll delay-300">
+          <a href="https://example.com/ios-profiles" class="block text-xl md:text-2xl font-semibold mb-2 hover:text-sky-500 transition duration-150">
+            iOS Configuration Profiles
+          </a>
+          <p class="text-gray-500 text-sm">
+            Link generator / koleksi profile (DNS, Wi-Fi, VPN) untuk kegunaan peribadi. Pastikan sumber profile trusted.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Projects Section (for Nav 2) -->
+    <section class="mb-20" id="projects">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center fade-in-scroll">
+        Experiments & Presets (My Lab)
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="p-6 glass-panel soft-neumorphism rounded-2xl fade-in-scroll">
+          <h3 class="text-lg font-semibold mb-2">Latency Log</h3>
+          <p class="text-sm text-gray-600">
+            Simpan log ping/latency ikut DNS/VPN/Carrier. Buat “ranking” ikut game feel.
+          </p>
+          <a class="inline-block mt-3 text-sm font-semibold text-sky-600 hover:text-sky-700" href="https://example.com/latency-log">
+            Open Log →
+          </a>
+        </div>
+
+        <div class="p-6 glass-panel soft-neumorphism rounded-2xl fade-in-scroll delay-100">
+          <h3 class="text-lg font-semibold mb-2">Shortcut Vault</h3>
+          <p class="text-sm text-gray-600">
+            Koleksi iOS Shortcuts untuk automasi: copy link, save notes, quick toggle network, dll.
+          </p>
+          <a class="inline-block mt-3 text-sm font-semibold text-sky-600 hover:text-sky-700" href="https://example.com/shortcuts">
+            Open Vault →
+          </a>
+        </div>
+
+        <div class="p-6 glass-panel soft-neumorphism rounded-2xl fade-in-scroll delay-200">
+          <h3 class="text-lg font-semibold mb-2">Config Templates</h3>
+          <p class="text-sm text-gray-600">
+            Template profile yang kemas & mudah reuse (DNS/VPN/Wi-Fi). “Plug & test”.
+          </p>
+          <a class="inline-block mt-3 text-sm font-semibold text-sky-600 hover:text-sky-700" href="https://example.com/templates">
+            Open Templates →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact Section (for Nav 3) -->
+    <section class="mb-20" id="contact">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center fade-in-scroll">
+        Notes & Backup Links
+      </h2>
+
+      <div class="p-6 md:p-8 glass-panel soft-neumorphism rounded-3xl fade-in-scroll max-w-3xl mx-auto">
+        <p class="text-sm md:text-base text-gray-700">
+          Ini halaman peribadi. Letak link backup, pastebin, docs, atau cloud storage untuk simpan config / catatan.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a class="p-4 rounded-2xl bg-white/60 border border-white/80 soft-neumorphism hover:text-sky-600 transition" href="https://example.com/backup-1">
+            Backup Link 1 →
+            <div class="text-xs text-gray-500 mt-1">Drive / iCloud / Notion</div>
+          </a>
+
+          <a class="p-4 rounded-2xl bg-white/60 border border-white/80 soft-neumorphism hover:text-sky-600 transition" href="https://example.com/backup-2">
+            Backup Link 2 →
+            <div class="text-xs text-gray-500 mt-1">Docs / Sheets / GitHub</div>
+          </a>
+        </div>
+
+        <p class="mt-5 text-xs text-gray-500">
+          Pro tip: Jangan simpan profile/config dari sumber meragukan. Kalau ragu, jangan install — jiwa mahal, jangan murah 🗿
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pt-8 border-t border-gray-200 text-gray-400 text-xs md:text-sm fade-in-scroll">
+      <p>RandomLinkMasbro © 2025 • Personal Lab • Built for experiments</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Intersection Observer for Scroll Fade-In Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.fade-in-scroll');
+      const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      elements.forEach(el => observer.observe(el));
+
+      // Prevent enter key from adding new lines in the single-line link textarea
+      const linkInput = document.getElementById('link-input');
+      linkInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') e.preventDefault();
+      });
+
+      // Save/Copy link
+      const saveBtn = document.getElementById('save-btn');
+      const lastLinkKey = 'rlm_last_link';
+
+      function setLastLink(url) {
+        localStorage.setItem(lastLinkKey, url);
+      }
+
+      function getLastLink() {
+        return localStorage.getItem(lastLinkKey) || '';
+      }
+
+      function copyToClipboard(text) {
+        if (!text) return;
+        navigator.clipboard?.writeText(text).catch(() => {});
+      }
+
+      // preload last saved link
+      const last = getLastLink();
+      if (last) linkInput.value = last;
+
+      saveBtn.addEventListener('click', () => {
+        const url = (linkInput.value || '').trim();
+        if (!url) return;
+
+        setLastLink(url);
+        copyToClipboard(url);
+
+        saveBtn.textContent = 'Saved & Copied ✅';
+        setTimeout(() => saveBtn.textContent = 'Save / Copy Link', 1200);
+      });
+
+      // Share panel actions
+      document.querySelectorAll('[data-action]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const action = btn.getAttribute('data-action');
+          const url = (linkInput.value || '').trim() || getLastLink();
+
+          if (!url) {
+            saveBtn.textContent = 'Paste a link first 😆';
+            setTimeout(() => saveBtn.textContent = 'Save / Copy Link', 1200);
+            return;
+          }
+
+          if (action === 'copy') {
+            copyToClipboard(url);
+            saveBtn.textContent = 'Copied ✅';
+            setTimeout(() => saveBtn.textContent = 'Save / Copy Link', 1200);
+            return;
+          }
+
+          if (action === 'print') {
+            window.print();
+            return;
+          }
+
+          if (action === 'email') {
+            window.location.href = `mailto:?subject=${encodeURIComponent('RandomLinks')}&body=${encodeURIComponent(url)}`;
+            return;
+          }
+
+          // social/message/more (basic fallback: use Web Share API if available)
+          if (navigator.share) {
+            navigator.share({ title: 'RandomLinks', text: 'Link', url }).catch(() => {});
+          } else {
+            copyToClipboard(url);
+            saveBtn.textContent = 'Copied (no share) ✅';
+            setTimeout(() => saveBtn.textContent = 'Save / Copy Link', 1200);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
